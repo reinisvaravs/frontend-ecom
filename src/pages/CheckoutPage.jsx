@@ -16,7 +16,7 @@ const accessTo = [
   "1000+ Professionally made Video lessons",
 ];
 const cadetFeat = [
-  "Access to all TRW Campuses",
+  "Access to all RRV Campuses",
   "Daily live broadcasts",
   "Daily course updates",
 ];
@@ -33,18 +33,47 @@ const heroFeat = [
 
 function CheckoutPage() {
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [selectedPayOpt, setSelectedPayOpt] = useState(null);
+  const [termsChecked, setTermsChecked] = useState(false);
 
   const handleSelected = (plan) => {
     setSelectedPlan(plan);
+    setSelectedPayOpt(null);
+  };
+
+  const handlePayment = (paymentOpt) => {
+    if (selectedPayOpt === paymentOpt) {
+      setSelectedPayOpt(null);
+    } else {
+      setSelectedPayOpt(paymentOpt);
+    }
+    setTermsChecked(false);
   };
 
   const paymentRef = useRef(null);
+  const payDetailsRef = useRef(null);
 
   useEffect(() => {
     if (paymentRef.current) {
       paymentRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [selectedPlan]);
+
+  useEffect(() => {
+    if (payDetailsRef.current) {
+      payDetailsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedPayOpt]);
+
+  const handleChange = (event) => {
+    setTermsChecked(event.target.checked);
+  };
+
+  const handlePurchase = () => {
+    if (!termsChecked) {
+      alert("Please agree to the terms.");
+    }
+  };
 
   return (
     <main>
@@ -82,13 +111,13 @@ function CheckoutPage() {
           <label>Email address</label>
           <input type="text" placeholder="example@gmail.com" />
         </div>
-        <div className={css.form} style={{ marginTop: "20px" }}>
+        <div className={css.form} style={{ marginTop: "10px" }}>
           <label>First Name</label>
           <input type="text" placeholder="First Name" />
         </div>
         <div
           className={css.form}
-          style={{ marginTop: "20px", marginBottom: "20px" }}
+          style={{ marginTop: "10px", marginBottom: "20px" }}
         >
           <label>Last Name</label>
           <input type="text" placeholder="Last Name" />
@@ -99,7 +128,7 @@ function CheckoutPage() {
         </div>
         <div
           className={`${css.planOption} ${
-            selectedPlan === "cadet" ? css.selectedPlan : ""
+            selectedPlan === "cadet" && css.selectedPlan
           }`}
           onClick={() => handleSelected("cadet")}
         >
@@ -116,13 +145,13 @@ function CheckoutPage() {
           ))}
           <IoIosArrowDown
             className={`${css.arrow} ${
-              selectedPlan === "cadet" ? css.selectedArrow : ""
+              selectedPlan === "cadet" && css.selectedArrow
             }`}
           />
         </div>
         <div
           className={`${css.planOption} ${
-            selectedPlan === "challenger" ? css.selectedPlan : ""
+            selectedPlan === "challenger" && css.selectedPlan
           }`}
           onClick={() => handleSelected("challenger")}
         >
@@ -139,7 +168,7 @@ function CheckoutPage() {
           ))}
           <IoIosArrowDown
             className={`${css.arrow} ${
-              selectedPlan === "challenger" ? css.selectedArrow : ""
+              selectedPlan === "challenger" && css.selectedArrow
             }`}
           />
           <div
@@ -152,7 +181,7 @@ function CheckoutPage() {
         </div>
         <div
           className={`${css.planOption} ${
-            selectedPlan === "hero" ? css.selectedPlan : ""
+            selectedPlan === "hero" && css.selectedPlan
           }`}
           style={{ background: "#282a33" }}
           onClick={() => handleSelected("hero")}
@@ -170,7 +199,7 @@ function CheckoutPage() {
           ))}
           <IoIosArrowDown
             className={`${css.arrow} ${
-              selectedPlan === "hero" ? css.selectedArrow : ""
+              selectedPlan === "hero" && css.selectedArrow
             }`}
           />
           <div className={css.activeTag}>Save $120</div>
@@ -184,9 +213,10 @@ function CheckoutPage() {
             <div className={css.payment} ref={paymentRef}>
               <button
                 className={`${css.paymentOpt} ${
-                  selectedPlan === "hero" ? css.disPayment : ""
-                }`}
+                  selectedPlan === "hero" ? css.disPayment : css.hoverPayOpt
+                } ${selectedPayOpt === "card" && css.activePay}`}
                 disabled={selectedPlan === "hero"}
+                onClick={() => handlePayment("card")}
               >
                 <LuCreditCard className={css.payImg} />
                 <p>Join with Credit/Debit Card</p>
@@ -194,9 +224,10 @@ function CheckoutPage() {
               </button>
               <button
                 className={`${css.paymentOpt} ${
-                  selectedPlan === "cadet" ? css.disPayment : ""
-                }`}
+                  selectedPlan === "cadet" ? css.disPayment : css.hoverPayOpt
+                } ${selectedPayOpt === "crypto" && css.activePay}`}
                 disabled={selectedPlan === "cadet"}
+                onClick={() => handlePayment("crypto")}
               >
                 <img src={crypto} className={css.payImg} />
                 <p>Join with Crypto</p>
@@ -204,6 +235,103 @@ function CheckoutPage() {
               </button>
             </div>
           </>
+        )}
+        {selectedPayOpt === "card" && (
+          <>
+            <div className={css.formHeader} ref={payDetailsRef}>
+              <FaCheckCircle className={css.checkMark} />
+              <p>Enter credit card</p>
+            </div>
+            <div className={css.form}>
+              <label>Card number</label>
+              <div style={{ position: "relative", width: "100%" }}>
+                <LuCreditCard
+                  style={{
+                    position: "absolute",
+                    left: "12px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    color: "#b7b7b7",
+                    fontSize: "30px",
+                  }}
+                />
+                <input
+                  type="tel"
+                  placeholder="xxxx xxxx xxxx xxxx"
+                  autoComplete="cc-number"
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    paddingLeft: "52px",
+                    height: "50px",
+                  }}
+                />
+              </div>
+            </div>
+            <div className={css.form} style={{ marginTop: "10px" }}>
+              <label>Expiration Date</label>
+              <input type="text" placeholder="MM/YY" autoComplete="cc-exp" />
+            </div>
+            <div className={css.form} style={{ marginTop: "10px" }}>
+              <label>CVC</label>
+              <input type="text" placeholder="x x x" autoComplete="cc-csc" />
+            </div>
+            <div className={css.form} style={{ marginTop: "10px" }}>
+              <label>Billing Address</label>
+              <input
+                type="text"
+                placeholder="Billing Address"
+                autoComplete="off"
+              />
+            </div>
+            {selectedPlan === null ? (
+              ""
+            ) : (
+              <>
+                <div className={css.checkoutFooter}>
+                  {selectedPlan === "cadet" && (
+                    <h1>
+                      $49.99<span> / Monthly</span>
+                    </h1>
+                  )}
+                  {selectedPlan === "challenger" && (
+                    <h1>
+                      $149<span> / 3 months</span>
+                    </h1>
+                  )}
+                  <div className={css.checkbox}>
+                    <input type="checkbox" onChange={handleChange} />
+                    <p>
+                      {selectedPlan === "cadet" &&
+                        "I accept the Terms and Conditions and Privacy Policy, and agree to pay $49.99 USD every month until I cancel."}
+                      {selectedPlan === "challenger" &&
+                        "I accept the Terms and Conditions and Privacy Policy, and agree to pay $149 USD every 3 months until I cancel."}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  className={css.enterNow}
+                  style={
+                    termsChecked
+                      ? {
+                          boxShadow: "0 0 30px 5px rgba(239, 175, 24, 0.5)",
+                          transition: "box-shadow 0.1s ease",
+                        }
+                      : {}
+                  }
+                  onClick={handlePurchase}
+                >
+                  <LuCreditCard className={css.enterNowImg} />
+                  <h1>Enter now</h1>
+                </button>
+              </>
+            )}
+          </>
+        )}
+        {selectedPayOpt === "crypto" && (
+          <div className={css.cryptoCheckout}>
+            <h1>Currently crypto payments are not available...</h1>
+          </div>
         )}
       </div>
     </main>
