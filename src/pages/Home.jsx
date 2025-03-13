@@ -4,11 +4,19 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const navigate = useNavigate();
 
+  const handleGotoLogin = () => {
+    navigate("/login");
+  };
+
+  const handleGotoRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <>
       <h1>Hello!</h1>
-      <button onClick={navigate("/login")}>Log in</button>
-      <button onClick={navigate("/register")}>Register</button>
+      <button onClick={handleGotoLogin}>Log in</button>
+      <button onClick={handleGotoRegister}>Register</button>
     </>
   );
 }

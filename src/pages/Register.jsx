@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Register() {
   return (
-    <div>Register</div>
-  )
+    <>
+      <h1 className="nigaa">Register</h1>
+    </>
+  );
 }
 
-export default Register
+export default Register;
