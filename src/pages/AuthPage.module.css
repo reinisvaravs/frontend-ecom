@@ -1,0 +1,147 @@
+.bg {
+  background-image: url(../assets/bg-code.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+  opacity: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.containercontainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+}
+
+.container {
+  width: 500px;
+  min-height: 400px;
+  background-color: #1d2b3a;
+  border-radius: 15px;
+  padding-top: 50px;
+  position: relative;
+}
+
+.back {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+  background-color: transparent;
+  border: none;
+
+  p {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.arrow {
+  color: white;
+  font-size: 20px;
+}
+
+.h2 {
+  text-align: center;
+  font-weight: 900;
+  color: white;
+  font-size: 22px;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  margin-top: 0;
+}
+
+.input {
+  width: 90%;
+  height: 48px;
+  background-color: #213043;
+  border: 1px solid #4e5968;
+  color: white;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-top: 2px;
+  font-size: 16px;
+}
+.input:focus {
+  outline: none;
+}
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.forgotPassword {
+  color: #7835cf;
+  margin-left: 4%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  background-color: transparent;
+  border: none;
+}
+
+.loginBtn {
+  background-color: #ecc879;
+  color: black;
+  text-transform: uppercase;
+  width: 90%;
+  height: 50px;
+  margin: 10px 5% 30px 5%;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  font-weight: 900;
+  transition: background 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #e3ae3a;
+  transition: background 0.2s ease;
+}
+
+.errorDiv {
+  width: 90%;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .container {
+    scale: 0.8;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    scale: 0.7;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
