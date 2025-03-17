@@ -21,8 +21,6 @@ function LandingPage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  console.log(import.meta.env);
-
   useEffect(() => {
     const token = localStorage.getItem("Token");
 
