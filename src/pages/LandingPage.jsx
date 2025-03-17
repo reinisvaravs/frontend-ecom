@@ -21,7 +21,7 @@ function LandingPage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  console.log(import.meta.env.VITE_API_BASE_URL)
+  console.log(import.meta.env);
 
   useEffect(() => {
     const token = localStorage.getItem("Token");
