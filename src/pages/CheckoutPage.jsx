@@ -7,7 +7,7 @@ import crypto from "../assets/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSchool, IoSchoolOutline } from "react-icons/io5";
 
-const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
 const accessTo = [
   "Live calls and AMAs with Experts",

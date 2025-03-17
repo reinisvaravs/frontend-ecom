@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isTokenExpired } from "./LandingPage";
 
-const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
 const ProfilePage = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import css from "./LandingPage.module.css";
 import { IoSchool } from "react-icons/io5";
 
-const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
 export const isTokenExpired = (token) => {
   if (!token) return true; // If no token, consider it expired
