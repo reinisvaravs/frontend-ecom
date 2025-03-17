@@ -28,7 +28,7 @@
   .logo1 {
     width: 240px;
     height: 240px;
-    color: rgb(220, 220, 220);
+    color: #f2ba12;
     margin-top: 50px;
     margin-bottom: 20px;
   }
@@ -119,7 +119,7 @@
   flex-wrap: nowrap;
 
   .logo2 {
-    color: white;
+    color: #f2ba12;
     width: 100px;
     height: 100px;
     margin-left: 10px;

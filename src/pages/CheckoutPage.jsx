@@ -7,6 +7,8 @@ import crypto from "../assets/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSchool, IoSchoolOutline } from "react-icons/io5";
 
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const accessTo = [
   "Live calls and AMAs with Experts",
   "24/7 Support and on-demand guidance",
@@ -111,7 +113,7 @@ function CheckoutPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:8383/api/stripe/create-checkout-session",
+        `${VITE_API_BASE_URL}/api/stripe/create-checkout-session`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -173,7 +175,7 @@ function CheckoutPage() {
 
     try {
       const response = await fetch(
-        "http://localhost:8383/api/stripe/check-user",
+        `${VITE_API_BASE_URL}/api/stripe/check-user`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

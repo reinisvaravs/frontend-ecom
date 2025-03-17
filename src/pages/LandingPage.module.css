@@ -32,7 +32,7 @@ button {
   .logo1 {
     width: 50px;
     height: 50px;
-    color: white;
+    color: #f2ba12;
   }
 }
 
@@ -75,6 +75,12 @@ button {
   font-size: 16px;
   padding: 8px 13px;
   border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.loginBtn:hover {
+  color: #070e15;
+  background-color: rgba(255, 165, 68, 255);
 }
 
 .joinBtn {
@@ -84,6 +90,12 @@ button {
   font-size: 16px;
   padding: 8px 13px;
   border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.joinBtn:hover {
+  color: #050e15;
+  background-color: #cd883e;
 }
 
 @media screen and (max-width: 1400px) {
@@ -112,7 +124,8 @@ button {
     flex-direction: column;
     height: 150px;
   }
-  .headerLogo, .headerButtons {
+  .headerLogo,
+  .headerButtons {
     width: 100%;
     justify-content: center;
   }

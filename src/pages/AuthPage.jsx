@@ -3,6 +3,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 function AuthPage() {
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
@@ -25,64 +27,67 @@ function AuthPage() {
 
   const handleLogin = async () => {
     let validationErrors = {};
-
+  
+    // ✅ 1️⃣ Client-side validation (avoids unnecessary requests)
     if (!userData.email) {
       validationErrors.email = "Email is required";
     }
     if (!userData.password) {
       validationErrors.password = "Password is required";
     }
-
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      return;
+      return; // ⛔ Stop here if validation fails
     }
-
+  
     const requestBody = {
       email: userData.email,
       password: userData.password,
     };
-
+  
     try {
-      const response = await fetch("http://localhost:8383/api/login", {
+      // ✅ 2️⃣ Send request to backend
+      const response = await fetch(`${VITE_API_BASE_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-
+  
       const data = await response.json();
-
+  
+      // ✅ 3️⃣ Handle response errors (invalid credentials, missing fields, etc.)
       if (!response.ok) {
         if (Array.isArray(data.errors) && data.errors.length > 0) {
           const validationErrors = {};
           data.errors.forEach((err) => {
             if (err.param) {
-              validationErrors[err.param] = err.msg;
-            } else if (err.msg.includes("Invalid email format")) {
-              // Fallback in case "param" is missing
-              validationErrors.email = err.msg;
+              validationErrors[err.param] = err.msg; // Field-specific errors
             }
           });
-
-          setErrors(validationErrors);
+  
+          setErrors(validationErrors); // ✅ Set errors for individual fields
         } else {
           setErrors({
             form: data.message || "An error occurred. Please try again.",
           });
         }
-
         return;
       }
-
-      setErrors({});
-
+  
+      // ✅ 4️⃣ Store JWT Token (used for protected routes)
       localStorage.setItem("Token", data.token);
+  
+      // ✅ 5️⃣ Redirect to home page after successful login
       navigate("/");
+  
+      // ✅ 6️⃣ Reset errors if login is successful
+      setErrors({});
     } catch (error) {
       console.error("❌ Network Error:", error.message);
       alert("❌ Something went wrong. Please try again later.");
     }
   };
+  
 
   return (
     <>
