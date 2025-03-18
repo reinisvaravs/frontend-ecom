@@ -42,19 +42,25 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
 
-  ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  li {
-    list-style: none;
-    font-size: 18px;
-    color: white;
-  }
+.postgreLogo,
+.expressLogo,
+.reactLogo,
+.nodeLogo,
+.stripeLogo {
+  width: 50px;
+  height: 50px;
+}
+
+.headerListSmall {
+  display: none;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .headerButtons {
@@ -102,6 +108,9 @@ button {
   .headerList {
     display: none;
   }
+  .headerListSmall {
+    display: flex;
+  }
   .header {
     width: 100%;
     margin: 5px auto;
@@ -128,5 +137,8 @@ button {
   .headerButtons {
     width: 100%;
     justify-content: center;
+  }
+  .headerListSmall {
+    scale: 0.8;
   }
 }

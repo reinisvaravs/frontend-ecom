@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./LandingPage.module.css";
 import { IoSchool } from "react-icons/io5";
+import postgreLogo from "../assets/postgre.svg";
+import expressLogo from "../assets/express.svg";
+import reactLogo from "../assets/react.svg";
+import nodeLogo from "../assets/node.svg";
+import stripeLogo from "../assets/stripe.svg";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -52,20 +57,24 @@ function LandingPage() {
           <IoSchool className={css.logo1} />
         </div>
         <div className={css.headerList}>
-          <ul>
-            <li>Feature</li>
-            <li>Interviews</li>
-            <li>Student Wins</li>
-            <li>Courses</li>
-            <li>About Reinis</li>
-          </ul>
+          <img
+            src={postgreLogo}
+            alt="postgreLogo"
+            className={css.postgreLogo}
+          />
+          <img
+            src={expressLogo}
+            alt="expressLogo"
+            className={css.expressLogo}
+          />
+          <img src={reactLogo} alt="reactLogo" className={css.reactLogo} />
+          <img src={nodeLogo} alt="nodeLogo" className={css.nodeLogo} />
+          <img src={stripeLogo} alt="stripeLogo" className={css.stripeLogo} />
         </div>
         <div className={css.headerButtons}>
           {user ? (
             <>
-              <p style={{ color: "white" }}>
-                Hello {user.first_name}!
-              </p>
+              <p style={{ color: "white" }}>Hello {user.first_name}!</p>
               <button
                 className={css.loginBtn}
                 onClick={() => navigate("/profile")}
@@ -91,6 +100,13 @@ function LandingPage() {
           )}
         </div>
       </header>
+      <div className={css.headerListSmall}>
+        <img src={postgreLogo} alt="postgreLogo" className={css.postgreLogo} />
+        <img src={expressLogo} alt="expressLogo" className={css.expressLogo} />
+        <img src={reactLogo} alt="reactLogo" className={css.reactLogo} />
+        <img src={nodeLogo} alt="nodeLogo" className={css.nodeLogo} />
+        <img src={stripeLogo} alt="stripeLogo" className={css.stripeLogo} />
+      </div>
     </>
   );
 }
