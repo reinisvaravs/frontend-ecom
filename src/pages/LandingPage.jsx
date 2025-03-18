@@ -53,23 +53,16 @@ function LandingPage() {
     <>
       <header className={css.header}>
         <div className={css.headerLogo}>
-          <h1>The Real Code</h1>
           <IoSchool className={css.logo1} />
+          <h1>The Real Code</h1>
         </div>
         <div className={css.headerList}>
-          <img
-            src={postgreLogo}
-            alt="postgreLogo"
-            className={css.postgreLogo}
-          />
-          <img
-            src={expressLogo}
-            alt="expressLogo"
-            className={css.expressLogo}
-          />
-          <img src={reactLogo} alt="reactLogo" className={css.reactLogo} />
-          <img src={nodeLogo} alt="nodeLogo" className={css.nodeLogo} />
-          <img src={stripeLogo} alt="stripeLogo" className={css.stripeLogo} />
+          <ul>
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>How to use</li>
+            <li>Roadmap</li>
+          </ul>
         </div>
         <div className={css.headerButtons}>
           {user ? (
@@ -88,7 +81,7 @@ function LandingPage() {
                 className={css.loginBtn}
                 onClick={() => navigate("/login")}
               >
-                Log in
+                Sign in
               </button>
               <button
                 className={css.joinBtn}
@@ -100,12 +93,12 @@ function LandingPage() {
           )}
         </div>
       </header>
-      <div className={css.headerListSmall}>
-        <img src={postgreLogo} alt="postgreLogo" className={css.postgreLogo} />
-        <img src={expressLogo} alt="expressLogo" className={css.expressLogo} />
-        <img src={reactLogo} alt="reactLogo" className={css.reactLogo} />
-        <img src={nodeLogo} alt="nodeLogo" className={css.nodeLogo} />
-        <img src={stripeLogo} alt="stripeLogo" className={css.stripeLogo} />
+      <div className={css.stackIconDiv}>
+        <img src={postgreLogo} alt="postgreLogo" className={css.stackIcons} />
+        <img src={expressLogo} alt="expressLogo" className={css.stackIcons} />
+        <img src={reactLogo} alt="reactLogo" className={css.stackIcons} />
+        <img src={nodeLogo} alt="nodeLogo" className={css.stackIcons} />
+        <img src={stripeLogo} alt="stripeLogo" className={css.stackIcons} />
       </div>
     </>
   );
