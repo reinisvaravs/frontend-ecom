@@ -50,7 +50,8 @@ function LandingPage() {
   }, []);
 
   return (
-    <>
+    <div className={css.landingPage}>
+      <div className={css.bg}></div>
       <header className={css.header}>
         <div className={css.headerLogo}>
           <IoSchool className={css.logo1} />
@@ -93,14 +94,20 @@ function LandingPage() {
           )}
         </div>
       </header>
-      <div className={css.stackIconDiv}>
+      <main className={css.main}>
+        <h1>
+          Money making is <b>a skill</b>
+        </h1>
+        <h2>We will teach you how to <b>master it</b></h2>
+      </main>
+      <footer className={css.stackIconDiv}>
         <img src={postgreLogo} alt="postgreLogo" className={css.stackIcons} />
         <img src={expressLogo} alt="expressLogo" className={css.stackIcons} />
         <img src={reactLogo} alt="reactLogo" className={css.stackIcons} />
         <img src={nodeLogo} alt="nodeLogo" className={css.stackIcons} />
         <img src={stripeLogo} alt="stripeLogo" className={css.stackIcons} />
-      </div>
-    </>
+      </footer>
+    </div>
   );
 }
 

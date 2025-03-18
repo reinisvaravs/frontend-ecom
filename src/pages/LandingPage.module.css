@@ -2,6 +2,24 @@ button {
   cursor: pointer;
 }
 
+.landingPage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url(../assets/car.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -10,7 +28,11 @@ button {
   flex-wrap: nowrap;
   height: 100px;
   width: 80%;
-  margin: 5px 8% 0 12%;
+  margin: 5px 0;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .headerLogo {
@@ -125,7 +147,7 @@ button {
   }
   .header {
     width: 100%;
-    margin: 5px auto;
+    margin: 5px 0;
     max-width: 900px;
   }
   .headerLogo {
@@ -159,5 +181,28 @@ button {
   }
   .stackIconDiv {
     scale: 0.7;
+  }
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 22%;
+  color: white;
+  font-family: Arial;
+
+  h1 {
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 0;
+  }
+  h2 {
+    font-size: 36px;
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-weight: 100;
   }
 }
