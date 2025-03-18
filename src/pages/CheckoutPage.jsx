@@ -6,6 +6,7 @@ import { LuCreditCard } from "react-icons/lu";
 import crypto from "../assets/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSchool, IoSchoolOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -37,6 +38,7 @@ function CheckoutPage() {
   const [selectedPayOpt, setSelectedPayOpt] = useState(null);
   const [termsChecked, setTermsChecked] = useState(false);
   const [typingTimeout, setTypingTimeout] = useState(null);
+  const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
     first_name: "",
@@ -127,7 +129,7 @@ function CheckoutPage() {
         console.error("🔴 Checkout Error:", data);
 
         if (data.redirect) {
-          window.location.href = data.redirect;
+          navigate(`${data.redirect}`);
           alert("You already have an account.");
           return;
         }
@@ -188,9 +190,9 @@ function CheckoutPage() {
       if (data.success && data.redirect) {
         alert("You already have an account. Redirecting to login.");
         setTimeout(() => {
-          window.location.href = `${data.redirect}?email=${encodeURIComponent(
+          navigate(`${data.redirect}?email=${encodeURIComponent(
             email
-          )}`;
+          )}`);
         }, 500);
       }
     } catch (error) {
@@ -408,11 +410,11 @@ function CheckoutPage() {
               />
               <label>
                 I accept the{" "}
-                <a href="/terms" target="_blank">
+                <a href="/store/terms" target="_blank">
                   Terms and Conditions
                 </a>{" "}
                 and{" "}
-                <a href="/terms" target="_blank">
+                <a href="/store/terms" target="_blank">
                   Privacy Policy
                 </a>
                 , and agree to pay{" "}
