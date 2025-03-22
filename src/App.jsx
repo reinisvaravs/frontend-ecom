@@ -10,11 +10,6 @@ import { useEffect, useState } from "react";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
-// the banner is not shown at first
-// it fetches the products immediately
-// if products take longer than 1s to fetch it shows the banner
-// once fetched the banner turns green and after 1s disappears
-
 function App() {
   const [bStatus, setBStatus] = useState("unknown");
   const [bannerVisible, setBannerVisible] = useState(false);
@@ -24,38 +19,46 @@ function App() {
     let hideBannerTimeout;
     let hasShownAsleepBanner = false;
 
-    const awakenBackend = async () => {
+    const pingBackend = async (retries = 3, delay = 5000) => {
       showBannerTimeout = setTimeout(() => {
         setBannerVisible(true);
         setBStatus("asleep");
         hasShownAsleepBanner = true;
       }, 1000);
 
-      try {
-        const response = await fetch(`${VITE_API_BASE_URL}/api/products`, {
-          method: "GET",
-        });
-        const data = await response.json();
+      for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+          const res = await fetch(`${VITE_API_BASE_URL}/api/ping`);
+          if (res.ok) {
+            clearTimeout(showBannerTimeout);
 
-        clearTimeout(showBannerTimeout);
+            if (hasShownAsleepBanner) {
+              setBStatus("awake");
+              hideBannerTimeout = setTimeout(() => {
+                setBannerVisible(false);
+                setBStatus("unknown");
+              }, 1000);
+            } else {
+              setBStatus("unknown");
+            }
 
-        if (hasShownAsleepBanner) {
-          setBStatus("awake");
-          hideBannerTimeout = setTimeout(() => {
-            setBannerVisible(false);
-            setBStatus("unknown");
-          }, 1000);
-        } else {
-          setBStatus("unknown");
+            return;
+          }
+        } catch (error) {
+          console.warn(`Ping attempt ${attempt} failed`);
+          if (attempt < retries) {
+            await new Promise((resolve) => setTimeout(resolve, delay));
+          }
         }
-      } catch (error) {
-        clearTimeout(showBannerTimeout);
-        setBStatus("asleep");
-        console.log("Backend is asleep");
       }
+
+      clearTimeout(showBannerTimeout);
+      setBannerVisible(true);
+      setBStatus("asleep");
+      console.error("Backend did not respond after multiple attempts.");
     };
 
-    awakenBackend();
+    pingBackend();
 
     return () => {
       clearTimeout(showBannerTimeout);
