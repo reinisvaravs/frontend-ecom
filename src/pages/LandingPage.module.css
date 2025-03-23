@@ -187,32 +187,79 @@ button {
 }
 
 .info {
-  min-height: 150vh;
   width: 100%;
+  height: 330vh;
   position: relative;
   display: flex;
   flex-direction: row;
+  background-color: #09111c;
+  margin-top: 50px;
 }
 
 .progressBarDiv {
   position: absolute;
-  top: 0;
-  left: 20px;
+  top: 5%;
+  left: 30px;
   width: 4px;
-  height: 90%;
+  height: 65%;
   background-color: #151d28;
-  z-index: 999;
+  position: relative;
+  overflow: visible;
 }
 
 .progressBar {
   position: absolute;
-  top: -1px;
+  top: 0;
   left: 0;
-  width: 4px;
+  width: 100%;
   height: 0%;
   background-color: #ffbb38;
-  overflow: hidden;
-  transition: height 0.1s ease-out;
+  transition: height 0.2s ease;
+}
+
+.progressBarHalf {
+  position: absolute;
+  top: 50%;
+  left: -28px;
+  background-color: #09111c;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.progressBarTop {
+  position: absolute;
+  top: -5%;
+  left: -28px;
+  background-color: #09111c;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.progressBarBottom {
+  position: absolute;
+  top: 92%;
+  left: -28px;
+  background-color: #09111c;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  position: relative;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 100px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .infoContent {
@@ -220,7 +267,79 @@ button {
   right: 0;
   top: 0;
   width: 90%;
-  height: 200vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+
+  img {
+    margin: 50px 0;
+    height: 400px;
+    width: auto;
+  }
+}
+
+.content1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 80%;
+  margin-bottom: 10px;
+
+  h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+}
+
+.content2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 80%;
+  margin-bottom: -20px;
+
+  p {
+    font-size: 18px;
+    color: #a7a9ac;
+
+    span {
+      font-weight: 900;
+      color: white;
+    }
+  }
+}
+
+.iconDiv {
+  background-color: rgb(29, 29, 29);
+  border-radius: 60px;
+  border: 4px solid white;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.faCheck {
+  color: #ffbb38;
+  width: 30px;
+  height: 30px;
+  margin: 30px;
+  margin-right: 20px;
 }
 
 /* FOOTER */

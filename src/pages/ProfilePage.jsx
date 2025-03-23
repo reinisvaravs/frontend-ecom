@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isTokenExpired } from "./LandingPage";
+import { isTokenExpired } from "../components/Header";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
