@@ -1,0 +1,31 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  h1 {
+    color: "white";
+    font-size: "50px";
+    text-align: "center";
+  }
+}
+
+.joinBtn {
+  border: 1px solid rgba(255, 165, 68, 255);
+  color: #070e15;
+  background-color: rgba(255, 165, 68, 255);
+  font-size: 16px;
+  padding: 8px 13px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.joinBtn:hover {
+  color: #050e15;
+  background-color: #cd883e;
+}

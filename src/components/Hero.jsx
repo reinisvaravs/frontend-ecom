@@ -1,6 +1,5 @@
-import React from "react";
-import css from "../pages/LandingPage.module.css";
-import videoFile from "../assets/car.mp4";
+import css from "../pages/home/Home.module.css";
+import videoFile from "../assets/videos/car.mp4";
 import JoinBtn from "./JoinBtn";
 
 function Hero() {

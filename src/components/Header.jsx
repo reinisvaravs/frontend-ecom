@@ -1,5 +1,5 @@
 import { IoSchool } from "react-icons/io5";
-import css from "../pages/LandingPage.module.css";
+import css from "../pages/home/Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 

@@ -1,4 +1,4 @@
-import css from "./LoginPage.module.css";
+import css from "./Login.module.css";
 import { BsArrowReturnLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { IoSchool } from "react-icons/io5";

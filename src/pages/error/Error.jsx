@@ -1,4 +1,4 @@
-import css from "./ErrorPage.module.css";
+import css from "./Error.module.css";
 import { useNavigate } from "react-router-dom";
 
 function ErrorPage() {

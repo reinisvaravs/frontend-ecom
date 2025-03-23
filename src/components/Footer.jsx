@@ -1,9 +1,9 @@
-import postgreLogo from "../assets/postgre.svg";
-import expressLogo from "../assets/express.svg";
-import reactLogo from "../assets/react.svg";
-import nodeLogo from "../assets/node.svg";
-import stripeLogo from "../assets/stripe.svg";
-import css from "../pages/LandingPage.module.css";
+import postgreLogo from "../assets/icons/postgre.svg";
+import expressLogo from "../assets/icons/express.svg";
+import reactLogo from "../assets/icons/react.svg";
+import nodeLogo from "../assets/icons/node.svg";
+import stripeLogo from "../assets/icons/stripe.svg";
+import css from "../pages/home/Home.module.css";
 
 function Footer() {
   return (

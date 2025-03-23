@@ -1,14 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
-import CheckoutPage from "./pages/CheckoutPage";
-import LoginPage from "./pages/LoginPage";
-import AuthPage from "./pages/AuthPage";
-import TermsPage from "./pages/TermsPage";
-import ProfilePage from "./pages/ProfilePage";
+import LandingPage from "./pages/home/Home";
+import CheckoutPage from "./pages/checkout/Checkout";
+import LoginPage from "./pages/login/Login";
+import AuthPage from "./pages/auth/Auth";
+import TermsPage from "./pages/terms/Terms";
+import ProfilePage from "./pages/profile/Profile";
+import ErrorPage from "./pages/error/Error";
+import Stripe from "./components/stripe/Stripe";
 import "./App.css";
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
-import ErrorPage from "./pages/ErrorPage";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -117,6 +118,22 @@ function App() {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/*" element={<ErrorPage />} />
+        <Route
+          path="/success"
+          element={
+            <Stripe
+              h1="Purchase Was Successful"
+              btnPath="/auth"
+              textBtn="Go to login"
+            />
+          }
+        />
+        <Route
+          path="/cancel"
+          element={
+            <Stripe h1="Purchase Was Canceled" btnPath="/" textBtn="Go back" />
+          }
+        />
       </Routes>
     </Router>
   );

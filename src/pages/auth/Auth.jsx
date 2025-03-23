@@ -1,4 +1,4 @@
-import css from "./AuthPage.module.css";
+import css from "./Auth.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";

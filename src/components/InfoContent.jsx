@@ -1,8 +1,8 @@
-import img1 from "../assets/img1.webp";
-import img2 from "../assets/img2.avif";
-import img3 from "../assets/img3.avif";
-import Content from "../components/Content";
-import ContentHeader from "../components/ContentHeader";
+import img1 from "../assets/images/img1.webp";
+import img2 from "../assets/images/img2.avif";
+import img3 from "../assets/images/img3.avif";
+import Content from "./Content";
+import ContentHeader from "./ContentHeader";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { IoSchool } from "react-icons/io5";

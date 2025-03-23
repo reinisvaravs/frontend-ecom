@@ -1,4 +1,4 @@
-import css from "../pages/LandingPage.module.css"
+import css from "../pages/home/Home.module.css"
 import { useNavigate } from "react-router-dom";
 
 function JoinBtn() {

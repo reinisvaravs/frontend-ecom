@@ -1,5 +1,5 @@
 import React from "react";
-import css from "../pages/LandingPage.module.css";
+import css from "../pages/home/Home.module.css";
 
 function ContentHeader({ bold, h1, icon }) {
   return (

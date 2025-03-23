@@ -1,9 +1,9 @@
-import css from "./CheckoutPage.module.css";
+import css from "./Checkout.module.css";
 import { ImKey } from "react-icons/im";
 import { FaCheckCircle, FaCheck } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 import { LuCreditCard } from "react-icons/lu";
-import crypto from "../assets/crypto.svg";
+import crypto from "../../assets/icons/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSchool, IoSchoolOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";

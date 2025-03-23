@@ -1,4 +1,4 @@
-import css from "../pages/LandingPage.module.css";
+import css from "../pages/home/Home.module.css";
 import { useEffect, useRef } from "react";
 
 function ProgressBar() {
