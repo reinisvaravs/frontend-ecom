@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./LandingPage.module.css";
 import { IoSchool } from "react-icons/io5";
@@ -26,6 +26,7 @@ export const isTokenExpired = (token) => {
 function LandingPage() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const progressBarRef = useRef(null);
 
   useEffect(() => {
     const token = localStorage.getItem("Token");
@@ -48,6 +49,29 @@ function LandingPage() {
         setUser(data.user);
       })
       .catch((err) => console.error("❌ Error fetching profile:", err));
+  }, []);
+
+  useEffect(() => {
+    const infoElement = document.querySelector(`.${css.info}`);
+
+    const handleScroll = () => {
+      if (!infoElement || !progressBarRef.current) return;
+
+      const scrollTop = window.scrollY;
+      const infoOffsetTop = infoElement.offsetTop;
+      const infoHeight = infoElement.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const scrollProgress =
+        (scrollTop - infoOffsetTop + windowHeight) /
+        (infoHeight + windowHeight);
+      const percent = Math.min(Math.max(scrollProgress, 0), 1) * 100;
+
+      progressBarRef.current.style.height = `${percent}%`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -117,6 +141,12 @@ function LandingPage() {
             Join the real code
           </button>
           <p>Join 113,000+ like-minded students</p>
+        </div>
+        <div className={css.info}>
+          <div className={css.progressBarDiv}>
+            <div ref={progressBarRef} className={css.progressBar}></div>
+          </div>
+          <div className={css.infoContent}></div>
         </div>
       </main>
       <footer className={css.stackIconDiv}>

@@ -7,12 +7,38 @@ import TermsPage from "./pages/TermsPage";
 import ProfilePage from "./pages/ProfilePage";
 import "./App.css";
 import { useEffect, useState } from "react";
+import Lenis from "@studio-freight/lenis";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
 function App() {
   const [bStatus, setBStatus] = useState("unknown");
   const [bannerVisible, setBannerVisible] = useState(false);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0 });
+    }, 0);
+  }, []);
 
   useEffect(() => {
     let showBannerTimeout;
