@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isTokenExpired } from "../components/Header";
+import css from "./ProfilePage.module.css";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -70,20 +71,21 @@ const ProfilePage = () => {
   };
 
   if (!user) return <h2 style={{ color: "white" }}>Loading...</h2>;
-
   const { start, end } = getSubscriptionDates();
 
   return (
-    <div style={{ color: "white" }}>
+    <div className={css.container}>
       <h1>Welcome, {user.first_name}!</h1>
-      <p>Email: {user.email}</p>
-      <p>Subscription: {user.plan || "No active plan"}</p>
-      <p>
-        <b>Subscription Start:</b> {start}
-      </p>
-      <p>
-        <b>Subscription End:</b> {end}
-      </p>
+      <div className={css.detailsDiv}>
+        <p>Email: {user.email}</p>
+        <p>Subscription: {user.plan || "No active plan"}</p>
+        <p>
+          <b>Subscription Start:</b> {start}
+        </p>
+        <p>
+          <b>Subscription End:</b> {end}
+        </p>
+      </div>
     </div>
   );
 };

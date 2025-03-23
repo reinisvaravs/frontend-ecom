@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
+import ErrorPage from "./pages/ErrorPage";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -115,6 +116,7 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
