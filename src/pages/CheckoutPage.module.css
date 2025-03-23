@@ -13,6 +13,45 @@
   background-color: #070e15;
 }
 
+.infoSmall {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 50px;
+
+  * {
+    overflow: hidden;
+  }
+
+  h2 {
+    color: white;
+    font-size: 20px;
+    width: 90%;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 100;
+    margin-top: 20px;
+  }
+
+  .infoHeader {
+    margin: 0 0 0 5%;
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+
+  .accessTo {
+    margin: 0 0 0 5%;
+
+    h3 {
+      font-size: 15px;
+    }
+  }
+}
+
 .info {
   width: 600px;
   height: 100vh;
@@ -470,7 +509,7 @@
 }
 
 .checkbox {
-  appearance: none; 
+  appearance: none;
   width: 24px;
   height: 24px;
   border: 2px solid #c7c7c7;
@@ -502,7 +541,6 @@
   border-color: #f2ba12;
 }
 
-
 @media screen and (max-width: 1300px) {
   .info {
     width: 500px;
@@ -516,7 +554,22 @@
   .info {
     display: none;
   }
+  .infoSmall {
+    display: flex;
+  }
   .checkout {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .infoSmall .infoHeader h1 {
+    font-size: 22px;
+  }
+  .infoSmall .accessTo h3 {
+    font-size: 14px;
+  }
+  .infoSmall h2 {
+    font-size: 14px;
   }
 }

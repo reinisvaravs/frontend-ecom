@@ -190,9 +190,7 @@ function CheckoutPage() {
       if (data.success && data.redirect) {
         alert("You already have an account. Redirecting to login.");
         setTimeout(() => {
-          navigate(`${data.redirect}?email=${encodeURIComponent(
-            email
-          )}`);
+          navigate(`${data.redirect}?email=${encodeURIComponent(email)}`);
         }, 500);
       }
     } catch (error) {
@@ -428,6 +426,27 @@ function CheckoutPage() {
               <LuCreditCard className={css.enterNowImg} />
               <h1 ref={submitBtn}>Join now</h1>
             </button>
+
+
+            <div className={css.infoSmall}>
+              <div className={css.infoHeader}>
+                <ImKey className={css.imKey} />
+                <h1>Unclock access to...</h1>
+              </div>
+              <div className={css.accessTo}>
+                {accessTo.map((item, index) => (
+                  <div key={index} className={css.accessItem}>
+                    <FaCheck className={css.check} />
+                    <h3>{item}</h3>
+                  </div>
+                ))}
+              </div>
+              <h2>
+                An active community of like-minded, wealth-focused individuals.
+              </h2>
+            </div>
+
+            
           </div>
         )}
         {selectedPayOpt === "crypto" && (
