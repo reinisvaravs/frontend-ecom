@@ -8,6 +8,7 @@ button {
   width: 100vw;
   overflow-x: hidden;
   position: relative;
+  color: white;
 }
 
 /* HEADER */
@@ -21,6 +22,7 @@ button {
   height: 100px;
   width: 80%;
   margin: 5px auto;
+  margin-bottom: 100px;
 }
 
 .headerLogo {
@@ -110,25 +112,19 @@ button {
 
 /* HERO */
 
-.main {
-  width: 100vw;
-  color: white;
-  font-family: Arial;
-  margin-top: 90px;
+.heroh1 {
+  font-size: clamp(30px, 5vw, 55px);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin: 0;
+}
 
-  h1 {
-    font-size: clamp(30px, 5vw, 55px);
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 100;
-    margin: 0;
-  }
-  h2 {
-    font-size: clamp(20px, 3vw, 36px);
-    text-align: center;
-    margin: 10px 0 0 0;
-    font-weight: 100;
-  }
+.heroh2 {
+  font-size: clamp(20px, 3vw, 36px);
+  text-align: center;
+  margin: 10px 0 0 0;
+  font-weight: 100;
 }
 
 .videoContainer {
@@ -279,6 +275,8 @@ button {
     margin: 50px 0;
     height: 400px;
     width: auto;
+    align-self: flex-start;
+    margin-left: 15%;
   }
 }
 
