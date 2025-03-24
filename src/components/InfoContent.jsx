@@ -6,11 +6,12 @@ import ContentHeader from "./ContentHeader";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { GiMoneyStack } from "react-icons/gi";
 import { IoSchool } from "react-icons/io5";
+import css from "../pages/home/Home.module.css";
 
-function InfoContent() {
+function InfoContent({ thirdImg }) {
   return (
     <>
-      <img src={img1} />
+      <img src={img1} className={css.infoContentImg} />
       <ContentHeader h1="Learn vital" bold="life lessons" icon={<IoSchool />} />
       <Content p="World-class" bold="custom built learning application" />
       <Content
@@ -20,7 +21,7 @@ function InfoContent() {
       />
       <Content p="Master the skills you need to" bold="maximise your income" />
 
-      <img src={img2} />
+      <img src={img2} className={css.infoContentImg} />
       <ContentHeader
         h1="Join a private"
         bold="network"
@@ -34,7 +35,7 @@ function InfoContent() {
       <Content p="Make" bold="like-minded friends" p2="on your journey" />
       <Content bold="Network with 113,000+ people" />
 
-      <img src={img3} />
+      <img src={img3} className={`${css.infoContentImg} ${thirdImg}`} />
       <ContentHeader
         h1="Access to"
         bold="multimillionaires"

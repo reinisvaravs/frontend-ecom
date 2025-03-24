@@ -150,17 +150,32 @@ button {
 .joinBtnHeroDiv {
   width: 100%;
   height: auto;
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0;
   padding-top: 10px;
+  padding-bottom: 100px;
+}
+
+.joinBtnP {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 50px;
+  overflow: hidden;
 
   p {
     color: #9b9fa1;
+    margin-left: 10px;
   }
+}
+
+.profileImg {
+  height: 30px;
 }
 
 .joinBtnHero {
@@ -191,6 +206,7 @@ button {
   background-color: #09111c;
   margin-top: 50px;
 }
+
 
 .progressBarDiv {
   position: absolute;
@@ -259,11 +275,7 @@ button {
 }
 
 .infoContent {
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 90%;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -271,7 +283,11 @@ button {
   padding-top: 100px;
   overflow: hidden;
 
-  img {
+  * {
+    overflow: hidden;
+  }
+
+  .infoContentImg {
     margin: 50px 0;
     height: 400px;
     width: auto;
@@ -279,6 +295,8 @@ button {
     margin-left: 15%;
   }
 }
+
+
 
 .content1 {
   display: flex;
@@ -315,6 +333,8 @@ button {
   }
 }
 
+
+
 .iconDiv {
   background-color: rgb(29, 29, 29);
   border-radius: 60px;
@@ -340,6 +360,10 @@ button {
   margin-right: 20px;
 }
 
+.thirdImage {
+  transform: translateX(-80px);
+}
+
 /* FOOTER */
 
 .stackIconDiv {
@@ -350,7 +374,6 @@ button {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 150px;
 }
 
 .stackIcons {
@@ -386,6 +409,124 @@ button {
   }
   .joinBtnHero:hover {
     scale: 0.9;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .infoContentImg {
+    scale: 0.7;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .info {
+    padding-left: 30%;
+  }
+  .progressBarDiv {
+    transform: translateX(-50px);
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .info {
+    padding-left: 40%;
+  }
+  .progressBarDiv {
+    transform: translateX(-150px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .iconDiv {
+    width: 70px;
+    height: 70px;
+  }
+  .content1 h1 {
+    font-size: 20px;
+  }
+  .faCheck {
+    width: 20px;
+    height: 20px;
+    margin: 25px;
+    margin-right: 5px;
+  }
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  .infoContent {
+    width: 100%;
+    padding: 0;
+  }
+  .infoContentImg {
+    scale: 0.8;
+    margin: 0;
+    transform: translateX(-80px);
+  }
+  .info {
+    height: 270vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .iconDiv {
+    width: 55px;
+    height: 55px;
+  }
+  .content1 h1 {
+    font-size: 18px;
+  }
+  .faCheck {
+    width: 15;
+    height: 15;
+    margin: 20px;
+    margin-right: 3px;
+  }
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .info {
+    height: 275vh;
+  }
+  .thirdImage {
+    transform: translateX(-190px);
+  }
+  .infoContentImg {
+    scale: 0.7;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .iconDiv {
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+  }
+  .content1 h1 {
+    font-size: 14px;
+  }
+  .faCheck {
+    width: 15px;
+    height: 15px;
+    margin: 15px;
+    margin-right: 0;
+  }
+  .icon {
+    width: 15px;
+    height: 15px;
+  }
+  .thirdImage {
+    transform: translateX(-240px);
+  }
+  .infoContentImg {
+    scale: 0.6;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .content2 p {
+    font-size: 15px;
   }
 }
 

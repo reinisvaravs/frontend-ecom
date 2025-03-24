@@ -10,14 +10,14 @@ function LandingPage() {
   return (
     <div className={css.landingPage}>
       <Header />
-        <Hero />
-        <div className={css.info}>
-          <ProgressBar />
-          <div className={css.infoContent}>
-            <InfoContent />
-            <JoinBtn />
-          </div>
+      <Hero />
+      <div className={css.info}>
+        <ProgressBar />
+        <div className={css.infoContent}>
+          <InfoContent thirdImg={css.thirdImage} />
         </div>
+      </div>
+      <JoinBtn style={{ background: "#09111c" }} />
       <Footer />
     </div>
   );
