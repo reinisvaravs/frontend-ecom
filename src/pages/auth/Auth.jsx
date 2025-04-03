@@ -2,6 +2,7 @@ import css from "./Auth.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import videoBg from "../../assets/videos/matrix.mp4";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -27,7 +28,7 @@ function AuthPage() {
 
   const handleLogin = async () => {
     let validationErrors = {};
-  
+
     // ✅ 1️⃣ Client-side validation (avoids unnecessary requests)
     if (!userData.email) {
       validationErrors.email = "Email is required";
@@ -39,12 +40,12 @@ function AuthPage() {
       setErrors(validationErrors);
       return; // ⛔ Stop here if validation fails
     }
-  
+
     const requestBody = {
       email: userData.email,
       password: userData.password,
     };
-  
+
     try {
       // ✅ 2️⃣ Send request to backend
       const response = await fetch(`${VITE_API_BASE_URL}/api/login`, {
@@ -52,9 +53,9 @@ function AuthPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),
       });
-  
+
       const data = await response.json();
-  
+
       // ✅ 3️⃣ Handle response errors (invalid credentials, missing fields, etc.)
       if (!response.ok) {
         if (Array.isArray(data.errors) && data.errors.length > 0) {
@@ -64,7 +65,7 @@ function AuthPage() {
               validationErrors[err.param] = err.msg; // Field-specific errors
             }
           });
-  
+
           setErrors(validationErrors); // ✅ Set errors for individual fields
         } else {
           setErrors({
@@ -73,13 +74,13 @@ function AuthPage() {
         }
         return;
       }
-  
+
       // ✅ 4️⃣ Store JWT Token (used for protected routes)
       localStorage.setItem("Token", data.token);
-  
+
       // ✅ 5️⃣ Redirect to home page after successful login
       navigate("/");
-  
+
       // ✅ 6️⃣ Reset errors if login is successful
       setErrors({});
     } catch (error) {
@@ -87,11 +88,19 @@ function AuthPage() {
       alert("❌ Something went wrong. Please try again later.");
     }
   };
-  
 
   return (
     <>
-      <div className={css.bg}></div>
+      <div className="videoDiv">
+        <video
+          src={videoBg}
+          className="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
       <div className={css.containercontainer}>
         <div className={css.container}>
           <button className={css.back} onClick={() => navigate("/login")}>

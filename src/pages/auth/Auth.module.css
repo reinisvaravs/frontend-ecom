@@ -1,18 +1,3 @@
-.bg {
-  background-image: url(../../assets/images/bg-code.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  z-index: -999;
-  opacity: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
 .containercontainer {
   width: 100vw;
   height: 100vh;
@@ -94,6 +79,9 @@
   font-size: 13px;
   background-color: transparent;
   border: none;
+
+  /* havent added functionality */
+  opacity: 0;
 }
 
 .loginBtn {
@@ -124,8 +112,6 @@
   font-size: 13px;
   margin: 5px 0;
 }
-
-
 
 @media screen and (max-width: 800px) {
   .container {

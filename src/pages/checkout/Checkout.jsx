@@ -5,32 +5,32 @@ import { useEffect, useState, useRef } from "react";
 import { LuCreditCard } from "react-icons/lu";
 import crypto from "../../assets/icons/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoSchool, IoSchoolOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import logo_yellow from "../../assets/images/trc_logo_yellow.png";
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
 const accessTo = [
-  "Live calls and AMAs with Experts",
-  "24/7 Support and on-demand guidance",
-  "Over 18 Modern Wealth Creation Methods",
-  "7+ Distinct Campuses",
-  "1000+ Professionally made Video lessons",
+  "Self-paced video lessons that let you learn at your own speed, anytime",
+  "Build real-world coding projects instead of just basic tutorials",
+  "Get access to a private coder community for support and motivation",
+  "Enjoy a flexible schedule with lifetime access to all materials",
+  "Follow a structured roadmap that takes you from zero to job-ready",
 ];
 const cadetFeat = [
-  "Access to all RRV Campuses",
-  "Daily live broadcasts",
-  "Daily course updates",
+  "Learn HTML, CSS, and JavaScript from scratch",
+  "Self-paced videos + interactive mini-projects",
+  "Access to the private coder community",
 ];
 const challengerFeat = [
-  "All of Cadet",
-  "Daily coin bonus",
-  "Power level boost",
+  "Master full-stack skills (React, Node, SQL)",
+  "Weekly Zoom coaching & group Q&A",
+  "Start building your portfolio and resume",
 ];
 const heroFeat = [
-  "Maximum daily coin bonus",
-  "Big power level boost",
-  "Exclusive chats and lessons",
+  "Learn advanced patterns, data structures & refactoring",
+  "1-on-1 mentorship & freelancing strategy sessions",
+  "Personal guidance to land your first job or clients",
 ];
 
 function CheckoutPage() {
@@ -201,7 +201,7 @@ function CheckoutPage() {
   return (
     <main className={css.main}>
       <div className={css.info}>
-        <IoSchool className={css.logo1} />
+        <img src={logo_yellow} className={css.logo1} />
         <div className={css.infoHeader}>
           <ImKey className={css.imKey} />
           <h1>Unclock access to...</h1>
@@ -214,16 +214,15 @@ function CheckoutPage() {
             </div>
           ))}
         </div>
-        <h2>An active community of like-minded, wealth-focused individuals.</h2>
       </div>
       <div className={css.checkout}>
         <div className={css.checkoutHeader}>
           <div>
-            <IoSchoolOutline className={css.logo2} />
+            <h1>Join the real code</h1>
+            <h2>Escape the matrix</h2>
           </div>
           <div>
-            <h1>Join the real code</h1>
-            <h2>Escape the basement</h2>
+            <img src={logo_yellow} className={css.logo2} />
           </div>
         </div>
         <div className={css.formHeader}>
@@ -296,7 +295,7 @@ function CheckoutPage() {
             $49.99<span> / monthly</span>
           </h1>
           <h2>Cadet</h2>
-          <p>A first step towards breaking free</p>
+          <p>Entry-level, beginner-friendly</p>
           {cadetFeat.map((item, index) => (
             <div key={index} className={css.cadetItem}>
               <FaCheck className={css.checkFeat} />
@@ -319,7 +318,7 @@ function CheckoutPage() {
             $149<span> / 3 months</span>
           </h1>
           <h2>Challenger</h2>
-          <p>Three months to test your limits</p>
+          <p>Intermediate path for serious learners</p>
           {challengerFeat.map((item, index) => (
             <div key={index} className={css.cadetItem}>
               <FaCheck className={css.checkFeat} />
@@ -350,7 +349,7 @@ function CheckoutPage() {
             $479.88<span> / 1 year</span>
           </h1>
           <h2>Hero</h2>
-          <p>One year to harness your power</p>
+          <p>Pro-level transformation track</p>
           {heroFeat.map((item, index) => (
             <div key={index} className={css.cadetItem}>
               <FaCheck className={css.checkFeat} />
@@ -427,7 +426,6 @@ function CheckoutPage() {
               <h1 ref={submitBtn}>Join now</h1>
             </button>
 
-
             <div className={css.infoSmall}>
               <div className={css.infoHeader}>
                 <ImKey className={css.imKey} />
@@ -445,8 +443,6 @@ function CheckoutPage() {
                 An active community of like-minded, wealth-focused individuals.
               </h2>
             </div>
-
-            
           </div>
         )}
         {selectedPayOpt === "crypto" && (

@@ -1,7 +1,7 @@
 import css from "../pages/home/Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import logo_white from "../assets/images/trc_logo_yellow.png"
+import logo_yellow from "../assets/images/trc_logo_yellow.png"
 
 const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
 
@@ -48,7 +48,7 @@ function Header() {
     <header className={css.header}>
       <div className={css.headerLogo}>
         <h1>The Real Code</h1>
-        <img src={logo_white} className={css.logo1} />
+        <img src={logo_yellow} className={css.logo1} />
       </div>
       <div className={css.headerList}>
         <ul>
