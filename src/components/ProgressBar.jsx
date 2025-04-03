@@ -39,13 +39,13 @@ function ProgressBar() {
   return (
     <div className={css.progressBarDiv}>
       <div ref={progressBarRef} className={css.progressBar}></div>
-      <div className={css.progressBarHalf}>
+      <div className={`${css.progressBarHalf} ${css.progressBarAll}`}>
         <div className={css.dot} />
       </div>
-      <div className={css.progressBarTop}>
+      <div className={`${css.progressBarTop} ${css.progressBarAll}`}>
         <div className={css.dot} />
       </div>
-      <div className={css.progressBarBottom}>
+      <div className={`${css.progressBarBottom} ${css.progressBarAll}`}>
         <div className={css.dot} />
       </div>
     </div>
