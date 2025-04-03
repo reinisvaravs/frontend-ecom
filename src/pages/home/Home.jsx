@@ -5,19 +5,30 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProgressBar from "../../components/ProgressBar";
 import Hero from "../../components/Hero";
+import videoBg from "../../assets/videos/matrixBg.mp4";
 
 function LandingPage() {
   return (
     <div className={css.landingPage}>
+      <div className="videoDiv">
+        <video
+          src={videoBg}
+          className="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
       <Header />
       <Hero />
       <div className={css.info}>
         <ProgressBar />
         <div className={css.infoContent}>
-          <InfoContent thirdImg={css.thirdImage} />
+          <InfoContent />
         </div>
       </div>
-      <JoinBtn style={{ background: "#09111c" }} />
+      <JoinBtn />
       <Footer />
     </div>
   );

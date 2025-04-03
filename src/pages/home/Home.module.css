@@ -42,16 +42,17 @@ button {
   }
 
   .logo1 {
-    width: 50px;
-    height: 50px;
-    color: #f2ba12;
+    width: 80px;
+    height: 80px;
+    margin-left: -10px;
   }
 }
 
 .headerList {
   width: 50%;
   height: 100%;
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -135,6 +136,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .video {
@@ -157,6 +159,7 @@ button {
   gap: 0;
   padding-top: 10px;
   padding-bottom: 100px;
+  margin-top: 100px;
 }
 
 .joinBtnP {
@@ -203,10 +206,9 @@ button {
   position: relative;
   display: flex;
   flex-direction: row;
-  background-color: #09111c;
+  /* background-color: #09111c; */
   margin-top: 50px;
 }
-
 
 .progressBarDiv {
   position: absolute;
@@ -225,41 +227,45 @@ button {
   left: 0;
   width: 100%;
   height: 0%;
-  background-color: #ffbb38;
+  background-color: white;
   transition: height 0.2s ease;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
 .progressBarHalf {
   position: absolute;
   top: 50%;
   left: -28px;
-  background-color: #09111c;
+  background-color: #070e15;
   width: 60px;
   height: 60px;
   border-radius: 50px;
   position: relative;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
 .progressBarTop {
   position: absolute;
   top: -5%;
   left: -28px;
-  background-color: #09111c;
+  background-color: #070e15;
   width: 60px;
   height: 60px;
   border-radius: 50px;
   position: relative;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
 .progressBarBottom {
   position: absolute;
   top: 92%;
   left: -28px;
-  background-color: #09111c;
+  background-color: #070e15;
   width: 60px;
   height: 60px;
   border-radius: 50px;
   position: relative;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
 }
 
 .dot {
@@ -293,10 +299,9 @@ button {
     width: auto;
     align-self: flex-start;
     margin-left: 15%;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
   }
 }
-
-
 
 .content1 {
   display: flex;
@@ -333,8 +338,6 @@ button {
   }
 }
 
-
-
 .iconDiv {
   background-color: rgb(29, 29, 29);
   border-radius: 60px;
@@ -360,16 +363,12 @@ button {
   margin-right: 20px;
 }
 
-.thirdImage {
-  transform: translateX(-80px);
-}
-
 /* FOOTER */
 
 .stackIconDiv {
   display: none;
   width: 100%;
-  height: 60px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
