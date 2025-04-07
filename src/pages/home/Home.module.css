@@ -166,11 +166,13 @@ button {
 .joinBtnP {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 50px;
-  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  height: 100px;
+  text-align: center;
 
   p {
     color: #9b9fa1;
@@ -281,16 +283,15 @@ button {
   * {
     overflow: hidden;
   }
+}
 
-  .infoContentImg {
-    margin: 50px 0;
-    height: 400px;
-    width: auto;
-    align-self: flex-start;
-    margin-left: 15%;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-    transform: translateX(50px);
-  }
+.infoContentImg {
+  margin: 50px 0;
+  height: 400px;
+  width: auto;
+  margin-left: 15%;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+  transform: translateX(-10vw);
 }
 
 .content1 {
@@ -436,7 +437,6 @@ button {
   }
   .infoContentImg {
     scale: 0.8;
-    margin: 0;
   }
   .info {
     height: 270vh;
@@ -519,6 +519,9 @@ button {
   }
   .infoContentImg {
     scale: 0.6;
+  }
+  .joinBtnHero {
+    scale: 0.7;
   }
 }
 
