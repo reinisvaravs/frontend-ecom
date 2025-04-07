@@ -408,12 +408,6 @@ button {
   }
 }
 
-@media screen and (max-width: 800px) {
-  .infoContentImg {
-    scale: 0.7;
-  }
-}
-
 @media screen and (max-width: 700px) {
   .iconDiv {
     scale: 0.8;
@@ -434,9 +428,7 @@ button {
   .infoContent {
     width: 100%;
     padding: 0;
-  }
-  .infoContentImg {
-    scale: 0.8;
+    padding-bottom: 50px;
   }
   .info {
     height: 270vh;
@@ -474,9 +466,6 @@ button {
   }
   .thirdImage {
     transform: translateX(-190px);
-  }
-  .infoContentImg {
-    scale: 0.7;
   }
 }
 
@@ -518,7 +507,7 @@ button {
     margin-right: 0;
   }
   .infoContentImg {
-    scale: 0.6;
+    scale: 0.9;
   }
   .joinBtnHero {
     scale: 0.7;
