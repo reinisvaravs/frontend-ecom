@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { isTokenExpired } from "../../components/Header";
 import css from "./Profile.module.css";
 
-const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
+const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
 
 const ProfilePage = () => {
   const navigate = useNavigate();

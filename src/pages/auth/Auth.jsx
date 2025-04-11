@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import videoBg from "../../assets/videos/matrix.mp4";
 
-const VITE_API_BASE_URL = "https://backend-ecom-gbzk.onrender.com";
+const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
 
 function AuthPage() {
   const navigate = useNavigate();
