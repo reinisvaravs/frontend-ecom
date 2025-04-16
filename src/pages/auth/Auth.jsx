@@ -6,6 +6,7 @@ import videoBg from "../../assets/videos/matrix.mp4";
 
 const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
 
+
 function AuthPage() {
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
