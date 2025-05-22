@@ -5,6 +5,7 @@ import JoinBtn from "./JoinBtn";
 function Hero() {
   return (
     <>
+      <p className={css.parag}>Everything is a functioning DEMO of an E-COMMERCE store with STRIPE invoices in test mode</p>
       <h1 className={css.heroh1}>
         Money making is <b>a skill</b>
       </h1>
@@ -16,7 +17,7 @@ function Hero() {
           <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <p className="videoP">VSL demo</p>
+        <p className="videoP">VSL goes here</p>
       </div>
       <JoinBtn />
     </>

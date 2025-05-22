@@ -114,6 +114,12 @@ button {
 
 /* HERO */
 
+.parag {
+  text-align: center;
+  color: grey;
+  font-size: clamp(10px, 2vw, 18px);
+}
+
 .heroh1 {
   font-size: clamp(30px, 5vw, 55px);
   text-align: center;
