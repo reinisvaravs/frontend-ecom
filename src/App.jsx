@@ -95,7 +95,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/store">
+    <Router>
       <div
         className={`asleepBackend ${bStatus === "awake" ? "awake" : ""} ${
           !bannerVisible ? "hidden" : ""
