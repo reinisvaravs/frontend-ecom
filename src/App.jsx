@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 
-const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
+const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
 
 function App() {
   const [bStatus, setBStatus] = useState("unknown");

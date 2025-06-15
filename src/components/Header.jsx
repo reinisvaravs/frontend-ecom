@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo_yellow from "../assets/images/trc_logo_yellow.png"
 
-const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
+const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
 
 
 export const isTokenExpired = (token) => {

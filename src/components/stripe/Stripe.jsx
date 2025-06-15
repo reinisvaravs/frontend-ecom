@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import css from "./Stripe.module.css";
 
-const VITE_API_BASE_URL = "https://e-commerce-backend-8eso.onrender.com";
+const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
 
 function Success({ h1, btnPath, textBtn }) {
   const navigate = useNavigate();
