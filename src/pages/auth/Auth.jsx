@@ -3,9 +3,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import videoBg from "../../assets/videos/matrix.mp4";
-
-const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
-
+import BACKEND_URL from "../../config/globalVar"
 
 function AuthPage() {
   const navigate = useNavigate();
@@ -49,7 +47,7 @@ function AuthPage() {
 
     try {
       // ✅ 2️⃣ Send request to backend
-      const response = await fetch(`${VITE_API_BASE_URL}/api/login`, {
+      const response = await fetch(`${BACKEND_URL}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody),

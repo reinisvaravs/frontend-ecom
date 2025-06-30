@@ -2,9 +2,7 @@ import css from "../pages/home/Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo_yellow from "../assets/images/trc_logo_yellow.png"
-
-const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
-
+import BACKEND_URL from "../config/globalVar"
 
 export const isTokenExpired = (token) => {
   if (!token) return true; // If no token, consider it expired
@@ -31,7 +29,7 @@ function Header() {
       return;
     }
 
-    fetch(`${VITE_API_BASE_URL}/api/profile`, {
+    fetch(`${BACKEND_URL}/api/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

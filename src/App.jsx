@@ -10,8 +10,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
-
-const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
+import BACKEND_URL from "./config/globalVar"
 
 function App() {
   const [bStatus, setBStatus] = useState("unknown");
@@ -56,7 +55,7 @@ function App() {
 
       for (let attempt = 1; attempt <= retries; attempt++) {
         try {
-          const res = await fetch(`${VITE_API_BASE_URL}/api/ping`);
+          const res = await fetch(`${BACKEND_URL}/api/ping`);
           if (res.ok) {
             clearTimeout(showBannerTimeout);
 

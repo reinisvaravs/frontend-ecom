@@ -1,8 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import css from "./Stripe.module.css";
-
-const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
+import BACKEND_URL from "../../config/globalVar.js"
 
 function Success({ h1, btnPath, textBtn }) {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ function Success({ h1, btnPath, textBtn }) {
       setIsUpdating(true);
 
       // Call the backend to update subscription details
-      fetch(`${VITE_API_BASE_URL}/api/stripe/update-subscription`, {
+      fetch(`${BACKEND_URL}/api/stripe/update-subscription`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

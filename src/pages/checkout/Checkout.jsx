@@ -7,9 +7,7 @@ import crypto from "../../assets/icons/crypto.svg";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import logo_yellow from "../../assets/images/trc_logo_yellow.png";
-
-const VITE_API_BASE_URL = "https://backend-ecom-p2f3.onrender.com";
-
+import BACKEND_URL from "../../config/globalVar"
 
 const accessTo = [
   "Self-paced video lessons that let you learn at your own speed, anytime",
@@ -116,7 +114,7 @@ function CheckoutPage() {
 
     try {
       const response = await fetch(
-        `${VITE_API_BASE_URL}/api/stripe/create-checkout-session`,
+        `${BACKEND_URL}/api/stripe/create-checkout-session`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -178,7 +176,7 @@ function CheckoutPage() {
 
     try {
       const response = await fetch(
-        `${VITE_API_BASE_URL}/api/stripe/check-user`,
+        `${BACKEND_URL}/api/stripe/check-user`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
