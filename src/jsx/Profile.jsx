@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { isTokenExpired } from "./Navbar";
 import BACKEND_URL from "../config/globalVar";
+import { BackButton } from "./Navbar";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -85,6 +86,7 @@ const ProfilePage = () => {
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+      <BackButton />
       <h1 style={{ textAlign: "center", marginBottom: "20px" }}>
         Welcome, {user.first_name}!
       </h1>

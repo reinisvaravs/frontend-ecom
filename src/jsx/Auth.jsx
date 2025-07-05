@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BACKEND_URL from "../config/globalVar";
+import { BackButton } from "./Navbar";
 
 function AuthPage() {
   const navigate = useNavigate();
@@ -94,27 +95,7 @@ function AuthPage() {
         textAlign: "center",
       }}
     >
-      <button
-        onClick={() => navigate("/login")}
-        style={{
-          background: "none",
-          border: "1px solid black",
-          padding: "8px 16px",
-          cursor: "pointer",
-          fontSize: "14px",
-          marginBottom: "20px",
-        }}
-        onMouseOver={(e) => {
-          e.target.style.background = "black";
-          e.target.style.color = "white";
-        }}
-        onMouseOut={(e) => {
-          e.target.style.background = "none";
-          e.target.style.color = "black";
-        }}
-      >
-        ← Back
-      </button>
+      <BackButton />
 
       <h1 style={{ marginBottom: "20px" }}>Sign in</h1>
 

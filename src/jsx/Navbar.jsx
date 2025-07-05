@@ -123,4 +123,21 @@ function Navbar() {
   );
 }
 
+export function BackButton({ style = {} }) {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate(-1)}
+      style={{
+        marginBottom: "20px",
+        padding: "8px 16px",
+        cursor: "pointer",
+        ...style,
+      }}
+    >
+      ← Back
+    </button>
+  );
+}
+
 export default Navbar;

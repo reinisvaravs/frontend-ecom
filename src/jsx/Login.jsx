@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { BackButton } from "./Navbar";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ function LoginPage() {
         textAlign: "center",
       }}
     >
+      <BackButton />
       <h1 style={{ marginBottom: "20px" }}>Login</h1>
       <button
         onClick={() => navigate("/checkout")}

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BACKEND_URL from "../config/globalVar";
+import { BackButton } from "./Navbar";
 
 function CheckoutPage() {
   const [selectedPlan, setSelectedPlan] = useState(null);
@@ -149,27 +150,7 @@ function CheckoutPage() {
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          background: "none",
-          border: "1px solid black",
-          padding: "8px 16px",
-          cursor: "pointer",
-          fontSize: "14px",
-          marginBottom: "20px",
-        }}
-        onMouseOver={(e) => {
-          e.target.style.background = "black";
-          e.target.style.color = "white";
-        }}
-        onMouseOut={(e) => {
-          e.target.style.background = "none";
-          e.target.style.color = "black";
-        }}
-      >
-        ← Back
-      </button>
+      <BackButton />
       <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Subscribe</h1>
 
       <div style={{ marginBottom: "20px" }}>
