@@ -13,7 +13,7 @@ export const isTokenExpired = (token) => {
   }
 };
 
-function Header() {
+function Navbar() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
@@ -115,7 +115,7 @@ function Header() {
               e.target.style.color = "black";
             }}
           >
-            Subscribe
+            Join Now
           </button>
         </div>
       )}
@@ -123,4 +123,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;

@@ -5,7 +5,7 @@ import ProfilePage from "./Profile";
 import ErrorPage from "./Error";
 import Stripe from "./Stripe";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./Header";
+import Navbar from "./Navbar";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
     >
       <Router>
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/" element={<Navbar />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/auth" element={<AuthPage />} />

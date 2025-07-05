@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isTokenExpired } from "./Header";
+import { isTokenExpired } from "./Navbar";
 import BACKEND_URL from "../config/globalVar";
 
 const ProfilePage = () => {
